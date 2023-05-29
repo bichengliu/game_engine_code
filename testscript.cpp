@@ -3,8 +3,9 @@
 #include <string>
 #include "gamecharacter.h"
 int main(){
-    GameCharacter myCharacter("Bob",14,1,12);
-    myCharacter.takeDamage(12);
+    GameCharacter myCharacter("Bob",14,1,12,true);
+    GameCharacter testGoblin("Goblin",8,1,12,true);
+    myCharacter.attackTarget(testGoblin);
 
-    std::cout << "The character's hp is: " << myCharacter.currentHitPoints<< " and status: " << myCharacter.status << std::endl;
+    std::cout << "The goblin's hp is: " << testGoblin.currentHitPoints<< " and status: " << testGoblin.status << std::endl;
 }

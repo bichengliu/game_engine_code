@@ -2,6 +2,7 @@
 #define GAMECHARACTER_H
 #include <stdio.h>
 #include <string>
+#include <iostream>
 class GameCharacter {
     public:
         unsigned int maxHitPoints;
@@ -9,13 +10,15 @@ class GameCharacter {
         unsigned int APR;
         unsigned int damagePerSwing;
         bool         status; //dead or alive
+        bool         alignment;
 
 
         std::string  characterName;
         GameCharacter();
         ~GameCharacter();
-        GameCharacter(std::string name,unsigned int maxHP, unsigned int APR, unsigned int DPS);
+        GameCharacter(std::string name,unsigned int maxHP, unsigned int APR, unsigned int DPS, bool faction);
+        
         void takeDamage(unsigned int damage);
-
+        void attackTarget(GameCharacter &target);
 };
 #endif
